@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Knaus Südwind 650 UX 60 Years – VB 34.800 € | Scharendijke</title>
+  <meta name="description" content="Knaus Südwind 650 UX 60 Years – sehr gepflegt, VB 34.800 €. Stellplatz in Scharendijke (Camping \"De Strandloper\") in unmittelbarer Strandnähe – ggf. übernehmbar. Große Bildergalerie, technische Daten, Kontakt per WhatsApp & Telefon." />
+
+  <!-- Social preview -->
+  <meta property="og:title" content="Knaus Südwind 650 UX 60 Years – VB 34.800 €" />
+  <meta property="og:description" content="Top gepflegt, Stellplatz in Scharendijke – Strandnähe. Jetzt ansehen & besichtigen." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/WOhnwagen (10).jpg" />
+
+  <style>
+    :root{--bg:#fbfbfd;--card:#fff;--muted:#6e6e73;--text:#1d1d1f;--line:rgba(0,0,0,.08);--shadow:0 12px 30px rgba(0,0,0,.08);--radius:22px;--primary:#1d1d1f}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Arial,sans-serif}
+    a{color:var(--text);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:1100px;margin:0 auto;padding:20px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+
+    /* SLIDER */
+    .slider{position:relative;overflow:hidden;border-radius:22px;border:1px solid var(--line)}
+    .slides{display:flex;transition:transform .45s ease;will-change:transform}
+    .slide{min-width:100%;height:min(58vh,620px);background:#000;display:flex;align-items:center;justify-content:center}
+    .slide img{width:100%;height:100%;object-fit:cover}
+    .caption{position:absolute;left:12px;bottom:12px;background:rgba(255,255,255,.9);border:1px solid var(--line);padding:8px 12px;border-radius:999px;font-weight:600;font-size:.9rem}
+    .navBtn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.96);border:1px solid var(--line);padding:10px 14px;border-radius:12px;cursor:pointer;font-weight:800}
+    .navPrev{left:12px} .navNext{right:12px}
+    .dots{position:absolute;left:0;right:0;bottom:10px;display:flex;gap:8px;justify-content:center}
+    .dot{width:9px;height:9px;border-radius:999px;background:rgba(255,255,255,.7);border:1px solid var(--line);cursor:pointer}
+    .dot.active{background:#1d1d1f}
+
+    /* HERO / INFO */
+    .hero-info{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;margin-top:16px}
+    .pad{padding:18px}
+    .title{font-size:clamp(1.8rem,2.8vw,2.5rem);line-height:1.15;margin:0}
+    .subtitle{color:var(--muted);margin:.4rem 0 1rem}
+    .price{font-size:clamp(1.6rem,3.2vw,2.4rem);font-weight:800}
+    .label{background:#fff;border:1px solid var(--line);padding:4px 10px;border-radius:999px;font-weight:700;display:inline-block;margin-left:10px}
+
+    .cta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+    .btn{appearance:none;border:1px solid var(--line);border-radius:14px;padding:12px 16px;font-weight:700;cursor:pointer;background:#fff}
+    .btn-primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+    .btn-wa{background:#25D366;color:#073a16;border-color:#19b956}
+
+    .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+    .fact{background:#fff;border:1px solid var(--line);padding:12px;border-radius:12px;text-align:center}
+    .fact .k{display:block;font-size:.95rem;color:var(--muted)}
+    .fact .v{display:block;font-size:1.1rem;font-weight:800}
+
+    section{margin-top:22px}
+    h2{font-size:1.35rem;margin:0 0 10px}
+    .grid{display:grid;gap:16px}
+    .grid-2{grid-template-columns:1fr 1fr}
+    .specs,.list{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+    .specs dl{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;margin:0}
+    .specs dt{color:var(--muted)} .specs dd{margin:0;font-weight:600}
+
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .gallery a{display:block;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+    .gallery img{width:100%;height:180px;object-fit:cover;display:block;transition:transform .3s ease}
+    .gallery a:hover img{transform:scale(1.04)}
+
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;padding:20px;z-index:50}
+    .lightbox.open{display:flex}
+    .lightbox img{max-width:92vw;max-height:86vh;border-radius:16px;box-shadow:var(--shadow)}
+    .icon-btn{position:absolute;top:20px;right:20px;background:rgba(255,255,255,.9);border:1px solid var(--line);color:#1d1d1f;padding:10px 14px;border-radius:12px;cursor:pointer;font-weight:700}
+
+    /* Sticky CTA */
+    .sticky{position:sticky;bottom:12px;margin-top:20px}
+    .bar{display:flex;gap:10px;background:#fff;border:1px solid var(--line);padding:10px;border-radius:999px;align-items:center;justify-content:center}
+
+    /* FAQ */
+    details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px}
+    details+details{margin-top:10px}
+    summary{cursor:pointer;font-weight:700}
+
+    footer{color:var(--muted);text-align:center;margin:28px 0 18px}
+
+    /* Mobile tweaks */
+    @media (max-width: 900px){
+      .container{padding:14px}
+      .hero-info{grid-template-columns:1fr}
+      .facts{grid-template-columns:repeat(2,1fr)}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .slide{height:52vh}
+    }
+    @media (max-width: 520px){
+      .gallery{grid-template-columns:1fr}
+      .caption{font-size:.85rem}
+      .slide{height:46vh}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- TOP SLIDER -->
+    <div class="slider card" id="topSlider" aria-label="Bilder Slideshow">
+      <div class="slides">
+        <div class="slide"><img src="images/WOhnwagen (10).jpg" alt="Knaus Südwind außen – 3/4-Ansicht"></div>
+        <div class="slide"><img src="images/WOhnwagen (11).jpg" alt="Grundriss – Knaus Südwind 650 UX 60 Years"></div>
+      </div>
+      <div class="caption" id="sliderCaption">Außen – 60 Years Paket</div>
+      <button class="navBtn navPrev" aria-label="Vorheriges Bild">◀</button>
+      <button class="navBtn navNext" aria-label="Nächstes Bild">▶</button>
+      <div class="dots" aria-hidden="true"></div>
+    </div>
+
+    <!-- HERO INFO -->
+    <div class="hero-info">
+      <div class="card pad">
+        <h1 class="title">Knaus Südwind 650 UX 60 Years</h1>
+        <p class="subtitle">Baujahr (angenommen): 2021 · Standort: <strong>Scharendijke</strong>, Camping <strong>„De Strandloper“</strong> – unmittelbare Strandnähe</p>
+        <div class="price">€ 34.800 <span class="label">Verhandlungsbasis</span></div>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#kontakt">Besichtigung vereinbaren</a>
+          <a class="btn btn-wa" href="https://wa.me/4915127704418" target="_blank" rel="noopener">Per WhatsApp anfragen</a>
+        </div>
+        <div class="facts">
+          <div class="fact"><span class="k">zul. Gesamtgew.</span><span class="v">1.700–1.900 kg</span></div>
+          <div class="fact"><span class="k">Schlafplätze</span><span class="v">bis zu 4</span></div>
+          <div class="fact"><span class="k">TÜV/Gas</span><span class="v">neu 05/2025</span></div>
+          <div class="fact"><span class="k">Länge/Breite</span><span class="v">ca. 8,3 m / 2,5 m</span></div>
+        </div>
+      </div>
+      <div class="card pad">
+        <h2>Besonderheit: Stellplatz</h2>
+        <ul>
+          <li>Standort <strong>Scharendijke</strong>, Camping <strong>„De Strandloper“</strong></li>
+          <li><strong>Unmittelbare Strandnähe</strong>; Übernahme ggf. nach Absprache mit Betreiber</li>
+          <li>Ruhige, gepflegte Anlage – ideal für Familie & Wassersport</li>
+        </ul>
+        <img src="images/WOhnwagen (5).JPG" alt="Stellplatz in Scharendijke – Außenansicht" loading="lazy" style="width:100%;height:220px;object-fit:cover;border-radius:14px;margin-top:8px;border:1px solid var(--line)" />
+      </div>
+    </div>
+
+    <!-- DETAILS -->
+    <section class="grid grid-2">
+      <div class="specs">
+        <h2>Technische Daten</h2>
+        <dl>
+          <dt>Marke / Modell</dt><dd>Knaus Südwind 650 UX 60 Years</dd>
+          <dt>Baujahr</dt><dd>angenommen: 2021</dd>
+          <dt>Fahrgestell</dt><dd>AL-KO, Antischlingerkupplung (AKS), Stoßdämpfer, ATC-Alko Trailer Control</dd>
+          <dt>Zulässiges Gesamtgewicht</dt><dd>1.700–1.900 kg</dd>
+          <dt>Maße (L x B x H)</dt><dd>[ca. 8,6 x 2,5 x 2,6 m]</dd>
+          <dt>HU / Gasprüfung</dt><dd>05/2025</dd>
+          <dt>Papiere</dt><dd>Zulassungsbescheinigung Teil I+II</dd>
+        </dl>
+      </div>
+      <div class="list">
+        <h2>Ausstattung & Highlights</h2>
+        <ul>
+          <li>Alufelgen, Antischlingerkupplung, <strong>ATC‑Alko Trailer Control</strong>, Tempo 100</li>
+          <li>Ausstellfenster, GFK‑Dach, Glattblech, Midi‑Heki</li>
+          <li>Verdunkelungs‑ & Fliegenschutzrollos, Insektenschutztür</li>
+          <li>Ambientebeleuchtung (dimmbar), LED</li>
+          <li>3‑Flammkocher, Spüle, großer AES‑Kühlschrank mit Frostfach</li>
+          <li>Warmluftheizung (Truma) mit Umluft</li>
+          <li>Kassettentoilette, Warmwasser, Frischwassertank</li>
+          <li>Gasflaschenkasten 2×11 kg, DuoControl CS, TV‑Halter</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- TRUST / WARTUNG -->
+    <section class="grid">
+      <div class="card pad">
+        <h2>Wartung & Zustand</h2>
+        <ul>
+          <li>✅ Dichtheitsprüfung ohne Befund (Belege vorhanden)</li>
+          <li>✅ HU & Gasprüfung neu (05/2025)</li>
+          <li>✅ Nichtraucher, haustierfrei</li>
+        </ul>
+        <p class="subtitle">Dokumente auf Wunsch einsehbar. (Exposé/Prüfbericht als PDF verlinkbar.)</p>
+      </div>
+    </section>
+
+    <!-- GALLERY (deine Originalbilder) -->
+    <section id="galerie">
+      <h2>Große Bildergalerie</h2>
+      <p class="subtitle">Klicke auf ein Bild, um es in groß zu sehen.</p>
+      <div class="gallery" id="gallery">
+        <a href="images/WOhnwagen (6).JPG"><img src="images/WOhnwagen (6).JPG" alt="Vorzelt & Wohnbereich" loading="lazy"></a>
+        <a href="images/WOhnwagen (1).JPG"><img src="images/WOhnwagen (1).JPG" alt="Schlafbereich" loading="lazy"></a>
+        <a href="images/WOhnwagen (3).JPG"><img src="images/WOhnwagen (3).JPG" alt="Innen – Rundsitzgruppe" loading="lazy"></a>
+        <a href="images/WOhnwagen (8).JPG"><img src="images/WOhnwagen (8).JPG" alt="Innen – Rundsitzgruppe 2" loading="lazy"></a>
+        <a href="images/WOhnwagen (5).JPG"><img src="images/WOhnwagen (5).JPG" alt="Außen – Stellplatz" loading="lazy"></a>
+        <a href="images/WOhnwagen (4).JPG"><img src="images/WOhnwagen (4).JPG" alt="Vorzelt – Küche/Equipment" loading="lazy"></a>
+        <a href="images/WOhnwagen (2).JPG"><img src="images/WOhnwagen (2).JPG" alt="Innen – Dachfenster" loading="lazy"></a>
+        <a href="images/WOhnwagen (9).JPG"><img src="images/WOhnwagen (9).JPG" alt="Außen – Seitenansicht" loading="lazy"></a>
+        <a href="images/WOhnwagen (7).JPG"><img src="images/WOhnwagen (7).JPG" alt="Vorzelt – Essbereich" loading="lazy"></a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="grid">
+      <div class="card pad">
+        <h2>FAQ</h2>
+        <details><summary>Warum Verkauf?</summary><p>Privatverkauf aus Zeitgründen. Der Wohnwagen ist sofort verfügbar.</p></details>
+        <details><summary>Ist der Stellplatz im Preis enthalten?</summary><p>Die Übernahme ist nach Absprache mit dem Betreiber möglich – Details gern im Gespräch.</p></details>
+        <details><summary>Was ist im Preis enthalten?</summary><p>Wohnwagen inkl. umfangreichem Zubehör (siehe Liste), auf Wunsch Exposé/Belegsammlung.</p></details>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="grid grid-2" id="kontakt">
+      <div class="list">
+        <h2>Kontakt & Besichtigung</h2>
+        <p>Am besten erreichbar <strong>täglich ab 17:00 Uhr</strong>. Besichtigung nach Absprache direkt in <strong>Scharendijke</strong>.</p>
+        <ul>
+          <li>Telefon: <a href="tel:+4915127704418">+49 151 27704418</a></li>
+          <li>WhatsApp: <a href="https://wa.me/4915127704418" target="_blank" rel="noopener">Nachricht senden</a></li>
+          <li>E‑Mail: <a href="mailto:vorname.nachname@example.com?subject=Anfrage%20Knaus%20650%20UX%2060%20Years">vorname.nachname@example.com</a></li>
+        </ul>
+      </div>
+      <div class="specs">
+        <h2>Dokumente (optional)</h2>
+        <dl>
+          <dt>Exposé</dt><dd><a href="docs/expose.pdf" target="_blank" rel="noopener">PDF öffnen</a></dd>
+          <dt>Letzter Prüfbericht</dt><dd><a href="docs/pruefbericht.pdf" target="_blank" rel="noopener">PDF</a></dd>
+          <dt>Handbuch</dt><dd><a href="docs/handbuch.pdf" target="_blank" rel="noopener">PDF</a></dd>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Sticky CTA -->
+    <div class="sticky">
+      <div class="bar">
+        <strong>Interesse?</strong>
+        <a class="btn btn-primary" href="#kontakt">Besichtigung anfragen</a>
+        <a class="btn btn-wa" href="https://wa.me/4915127704418" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </div>
+
+    <footer>
+      <small>Privatverkauf, keine Gewährleistung. Irrtümer & Zwischenverkauf vorbehalten.</small>
+    </footer>
+  </div>
+
+  <!-- Lightbox (für Galerie) -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="icon-btn" aria-label="Schließen" title="Schließen">✕</button>
+    <img alt="Großansicht" />
+  </div>
+
+  <script>
+    // --- Simple Slider with captions ---
+    (function(){
+      const root = document.getElementById('topSlider');
+      const track = root.querySelector('.slides');
+      const slides = Array.from(root.querySelectorAll('.slide'));
+      const prev = root.querySelector('.navPrev');
+      const next = root.querySelector('.navNext');
+      const dotsWrap = root.querySelector('.dots');
+      const caption = document.getElementById('sliderCaption');
+      const captions = ['Außen – 60 Years Paket','Grundriss – 650 UX'];
+      let i = 0;
+
+      function go(n){ i = (n+slides.length)%slides.length; track.style.transform = `translateX(${-i*100}%)`; [...dotsWrap.children].forEach((d,idx)=>d.classList.toggle('active', idx===i)); caption.textContent = captions[i] || ''; }
+      function mkDots(){ slides.forEach((_,idx)=>{ const d=document.createElement('button'); d.className='dot'+(idx===0?' active':''); d.addEventListener('click', ()=>go(idx)); dotsWrap.appendChild(d); }); }
+      mkDots();
+      prev.addEventListener('click', ()=>go(i-1));
+      next.addEventListener('click', ()=>go(i+1));
+      document.addEventListener('keydown', e=>{ if(e.key==='ArrowLeft') go(i-1); if(e.key==='ArrowRight') go(i+1); });
+      let startX=null; track.addEventListener('pointerdown', e=>startX=e.clientX,{passive:true}); track.addEventListener('pointerup', e=>{ if(startX==null) return; const dx=e.clientX-startX; if(Math.abs(dx)>40){ go(i+(dx<0?1:-1)); } startX=null; });
+    })();
+
+    // --- Lightbox for gallery ---
+    (function(){
+      const gallery = document.getElementById('gallery');
+      const box = document.getElementById('lightbox');
+      const img = box.querySelector('img');
+      const closeBtn = box.querySelector('button');
+      function open(src){ img.src = src; box.classList.add('open'); box.setAttribute('aria-hidden','false'); }
+      function close(){ box.classList.remove('open'); box.setAttribute('aria-hidden','true'); img.removeAttribute('src'); }
+      if(gallery){
+        gallery.addEventListener('click', e=>{ const a=e.target.closest('a'); if(!a) return; e.preventDefault(); open(a.href); });
+      }
+      closeBtn.addEventListener('click', close); box.addEventListener('click', e=>{ if(e.target===box) close(); }); document.addEventListener('keydown', e=>{ if(e.key==='Escape') close(); });
+    })();
+  </script>
+</body>
+</html>
